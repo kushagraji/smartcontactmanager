@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+    <title>From Numbers to Roman Numerals</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+</head>
+<body>
+	<section>
+		<h1>Register Here</h1>
+		<div th:text="${message}"></div>
+		<form  th:action="@{/doRegistered}" th:object="${user}" method="post">
+		  <label for="name"  >Name:</label><br>
+		  <input type="text" id="name" name="name" th:field="*{name}"><br>
+		  
+		  <label for="email" >Email:</label><br>
+		  <input type="email" id="email" name="email" th:field="*{email}"><br>
+		  
+		  <label for="pwd">Password:</label><br>
+		  <input type="password" id="password" name="password"><br>
+		  
+		  <label for="about">About:</label><br>
+		  <textarea id="about" name="about" rows="4" cols="50" th:field="*{about}"></textarea><br>
+		  
+		  <input type="submit" value="Submit">
+		  <input type="reset" value="Reset"><br>
+		  
+		  <input type="checkbox" id="myCheckbox" name="myCheckbox">
+		  <label for="myCheckbox">Accept Terms And Condition</label>
+		  
+		 
+		</form> 
+	</section>
+</body>
+</html>
